@@ -13,13 +13,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let equal = document.querySelector(".btn-equal");
     // console.log("Equal Button:", equal);
 
+    let maxLength = 9; // Maximum number of characters allowed in inputValue
+
     buttons.forEach(function (button) {
       button.addEventListener("click", function (e) {
         let value = e.target.dataset.num;
-        inputValue.value += value;
 
-        // console.log("Button Clicked, Value:", value);
-        // console.log("Input Value:", inputValue.value);
+        // Check if length of inputValue exceeds maxLength
+        if (inputValue.value.length < maxLength) {
+          inputValue.value += value;
+        }
       });
     });
 
@@ -30,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let answer = eval(inputValue.value);
         inputValue.value = answer;
       }
+
+      //   inputValue.value = "";
     });
 
     allClear.addEventListener("click", (e) => {
