@@ -32,7 +32,12 @@ form input {
     color: white;
     pointer-events: none;
     padding-right: 25px;
+    padding-left: 25px;
     padding-top: 40px;
+}
+
+input::placeholder {
+    color: white;
 }
 
 .buttons {
@@ -53,17 +58,6 @@ button {
     color: rgb(255, 255, 255);
 }
 
-
-.fourth :nth-child(1) {
-    width: 130px;
-    border-radius: 30px;
-}
-
-.fifth :nth-child(1) {
-    width: 195px;
-    border-radius: 30px;
-}
-
 .btn-yellow {
     background: rgb(255, 157, 0);
     color: white;
@@ -74,7 +68,20 @@ button {
     background: rgb(49, 49, 49);
 }
 
-.btn-all-clear {
+.btn-all-clear,
+.btn-delete {
     background: rgb(186, 186, 186);
     color: black;
+    font-size: 16px;
+}
+
+.buttons :nth-child(13) {
+    width: 130px;
+    border-radius: 30px;
+}
+
+.buttons :nth-child(16),
+.buttons :nth-child(17) {
+    width: 95px;
+    border-radius: 30px;
 }
