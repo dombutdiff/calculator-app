@@ -56,10 +56,15 @@ button {
     cursor: pointer;
     margin-top: 10px;
     color: rgb(255, 255, 255);
+    transition: opacity 0.1s;
+}
+
+button:hover {
+    opacity: 0.6;
 }
 
 .btn-yellow {
-    background: rgb(255, 157, 0);
+    background: rgb(173, 80, 255);
     color: white;
     font-size: 30px;
 }

@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function (e) {
       // Get the value associated with the clicked button from its "data-num" attribute
       let value = e.target.dataset.num;
+      inputValue.value += value;
 
-      // Check if the length of the inputValue exceeds the maxLength before appending a new character
-      if (inputValue) {
-        // Append the value of the clicked button to the inputValue
-        inputValue.value += value;
+      // Update the text of allClear button based on inputValue
+      if (inputValue.value !== "") {
+        allClear.textContent = "C"; // Change to "C" if there's a value
+      } else {
+        allClear.textContent = "AC"; // Change to "AC" if input is empty
       }
     });
   });
@@ -39,11 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
   allClear.addEventListener("click", (e) => {
     // Clear the inputValue when the allClear button is clicked
     inputValue.value = "";
+    if (inputValue.value === "") {
+      // If input is empty, change button text to "AC"
+      allClear.textContent = "AC";
+    }
   });
 
   // Add event listener to the deleteInput button to handle click events
   deleteInput.addEventListener("click", (e) => {
     // Remove the last character from the inputValue using the slice() method
     inputValue.value = inputValue.value.slice(0, -1); // Remove last character
+    if (inputValue.value === "") {
+      // If input is empty, change button text to "AC"
+      allClear.textContent = "AC";
+    }
   });
 })();
